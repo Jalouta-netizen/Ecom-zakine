@@ -1,48 +1,28 @@
 "use strict";
 
 const products = [
-  { id: "babouche", name: "Babouche Fassi", category: "Artisanat marocain", group: "artisanat", price: 299, color: "#bd7440", colorName: "Cuir miel", badge: "FAIT MAIN", model: "babouche", short: "Un savoir-faire de Fès, à porter tous les jours.", detail: "Une babouche inspirée du travail des artisans de Fès, avec une silhouette souple et une couleur chaude facile à porter.", specs: "Cuir souple, semelle légère. Chaque pièce est réalisée artisanalement ; de légères variations de teinte sont possibles." },
-  { id: "teapot", name: "Théière Tétouan", category: "Artisanat marocain", group: "artisanat", price: 349, color: "#c5a35b", colorName: "Laiton", badge: "ART DE RECEVOIR", model: "teapot", short: "L’heure du thé prend le temps qu’elle mérite.", detail: "Une théière au charme marocain traditionnel, pensée pour les moments de partage et le rituel du thé à la menthe.", specs: "Métal à finition brillante, poignée isolante. Lavage doux à la main conseillé." },
-  { id: "basket", name: "Panier Souk", category: "Artisanat marocain", group: "artisanat", price: 229, color: "#c39762", colorName: "Fibre naturelle", badge: "TRESSÉ MAIN", model: "basket", short: "Un panier tressé pour le marché et la maison.", detail: "Un panier inspiré des marchés marocains, tressé à la main pour accompagner les courses ou ranger les essentiels de la maison.", specs: "Fibre végétale tressée avec anses renforcées. Dimensions et motifs peuvent légèrement varier selon le tressage." },
-  { id: "tray", name: "Plateau Zellige", category: "Artisanat marocain", group: "artisanat", price: 279, color: "#285a42", colorName: "Vert profond", badge: "MOTIF TRADITIONNEL", model: "tray", short: "Un motif géométrique marocain pour recevoir avec soin.", detail: "Un plateau décoratif inspiré des motifs zellige, pour servir le thé ou apporter une touche artisanale à la maison.", specs: "Plateau rigide avec décor géométrique. Nettoyage avec un chiffon doux ; ne pas immerger." },
-  { id: "serum", name: "Sérum Éclat", category: "Beauté", group: "beaute", price: 189, color: "#c78d65", colorName: "Ambre", badge: "SOIN VISAGE", model: "serum", short: "Un soin léger pour une peau lumineuse, chaque jour.", detail: "Un sérum visage à la texture légère, pensé pour s’intégrer simplement à votre rituel du matin ou du soir.", specs: "Flacon en verre ambré de 30 ml, pipette précise. Formule hydratante, sans parfum ajouté." },
-  { id: "argan", name: "Huile d’argan", category: "Beauté beldi", group: "beaute", price: 129, color: "#b67a43", colorName: "Argan", badge: "RITUEL BELDI", model: "oil", short: "Un rituel nourrissant inspiré des traditions marocaines.", detail: "Une huile de beauté inspirée des rituels marocains, à intégrer à votre routine visage, corps ou cheveux.", specs: "Flacon en verre ambré de 50 ml avec pipette. Pour un usage cosmétique externe." },
-  { id: "savon-beldi", name: "Savon noir beldi", category: "Beauté beldi", group: "beaute", price: 79, color: "#455442", colorName: "Olive", badge: "RITUEL HAMMAM", model: "soap", short: "Le geste traditionnel du hammam à la maison.", detail: "Un savon noir à la texture généreuse, inspiré du rituel du hammam marocain. À utiliser sur peau humide avant le rinçage.", specs: "Pot de 200 g. Usage externe uniquement. Éviter le contour des yeux." },
-  { id: "cream", name: "Crème Douce", category: "Beauté", group: "beaute", price: 159, color: "#e8cdb8", colorName: "Pêche", badge: "SOIN QUOTIDIEN", model: "cream", short: "Une crème confortable, sans sensation de lourdeur.", detail: "Une crème visage douce et facile à appliquer. Sa texture fondante accompagne votre routine et laisse la peau souple.", specs: "Pot de 50 ml avec couvercle à vis. Convient aux peaux normales à sèches. Sans parfum ajouté." },
-  { id: "rose-water", name: "Eau de rose", category: "Beauté beldi", group: "beaute", price: 89, color: "#ce8e89", colorName: "Rose", badge: "GESTE FRAÎCHEUR", model: "rose", short: "Une brume florale, fraîche et délicate.", detail: "Une eau florale inspirée des soins marocains, à vaporiser pour un geste frais dans votre routine quotidienne.", specs: "Flacon vaporisateur de 100 ml. Usage cosmétique externe. Éviter le contact avec les yeux." },
-  { id: "ghassoul", name: "Ghassoul douceur", category: "Beauté beldi", group: "beaute", price: 99, color: "#a97955", colorName: "Terre", badge: "RITUEL HAMMAM", model: "ghassoul", short: "L’argile marocaine pour un rituel de soin tout simple.", detail: "Une argile de soin inspirée du ghassoul marocain traditionnel. Mélangée à un peu d’eau, elle s’utilise en masque pour le visage ou les cheveux.", specs: "Poudre minérale, pot de 150 g. Préparer juste avant utilisation. Éviter le contour des yeux." },
-  { id: "perfume", name: "Eau de parfum Fleur", category: "Beauté", group: "beaute", price: 349, color: "#d8a4a0", colorName: "Rose poudré", badge: "SIGNATURE", model: "perfume", short: "Une note florale discrète qui vous ressemble.", detail: "Une eau de parfum au sillage floral et délicat, imaginée pour les petits plaisirs de tous les jours.", specs: "Flacon de 50 ml en verre, vaporisateur rechargeable. Notes de fleur blanche et de musc doux." },
-  { id: "bottle", name: "Gourde Nomade", category: "Maison", group: "maison", price: 229, color: "#7b9b8a", colorName: "Vert sauge", badge: "À EMPORTER", model: "bottle", short: "Votre boisson préférée, toujours à portée de main.", detail: "Une gourde réutilisable en acier inoxydable, assez légère pour vous suivre toute la journée.", specs: "Acier inoxydable à double paroi, 500 ml, bouchon étanche et lavage à la main conseillé." },
-  { id: "bag", name: "Sac Week-end", category: "Accessoires", group: "accessoires", price: 499, color: "#455c4a", colorName: "Sauge", badge: "PRÊT À PARTIR", model: "bag", short: "Un sac bien pensé pour les escapades improvisées.", detail: "Un sac souple et spacieux pour partir léger. Une poche intérieure garde les petits essentiels à leur place.", specs: "Toile résistante, anses renforcées, poche intérieure zippée et bandoulière réglable." },
-  { id: "lamp", name: "Lampe Nomade", category: "Maison", group: "maison", price: 299, color: "#efc64b", colorName: "Citron", badge: "BELLE LUMIÈRE", model: "lamp", short: "Une lumière douce, où que la soirée vous mène.", detail: "Une lampe compacte sans fil qui crée une lumière chaleureuse sur un bureau, une table ou une terrasse couverte.", specs: "Trois intensités, recharge USB-C, jusqu’à 12 h d’autonomie et abat-jour diffusant." }
+  { id: "babouche", name: "Babouche Fassi", category: "Artisanat marocain", group: "artisanat", price: 299, color: "#bd7440", colorName: "Cuir miel", badge: "FAIT MAIN", image: "photo-1562273138-f46be4ebdf33", short: "Un savoir-faire de Fès, à porter tous les jours.", detail: "Une babouche inspirée du travail des artisans de Fès, avec une silhouette souple et une couleur chaude facile à porter.", specs: "Cuir souple, semelle légère. Chaque pièce est réalisée artisanalement ; de légères variations de teinte sont possibles." },
+  { id: "teapot", name: "Théière Tétouan", category: "Artisanat marocain", group: "artisanat", price: 349, color: "#c5a35b", colorName: "Laiton", badge: "ART DE RECEVOIR", image: "photo-1683558654439-8b9986cbf1dd", short: "L’heure du thé prend le temps qu’elle mérite.", detail: "Une théière au charme marocain traditionnel, pensée pour les moments de partage et le rituel du thé à la menthe.", specs: "Métal à finition brillante, poignée isolante. Lavage doux à la main conseillé." },
+  { id: "basket", name: "Panier Souk", category: "Artisanat marocain", group: "artisanat", price: 229, color: "#c39762", colorName: "Fibre naturelle", badge: "TRESSÉ MAIN", image: "photo-1622701893201-9bc9eb616690", short: "Un panier tressé pour le marché et la maison.", detail: "Un panier inspiré des marchés marocains, tressé à la main pour accompagner les courses ou ranger les essentiels de la maison.", specs: "Fibre végétale tressée avec anses renforcées. Dimensions et motifs peuvent légèrement varier selon le tressage." },
+  { id: "tray", name: "Plateau Zellige", category: "Artisanat marocain", group: "artisanat", price: 279, color: "#285a42", colorName: "Vert profond", badge: "MOTIF TRADITIONNEL", image: "photo-1614808252086-4589b0f83550", short: "Un motif géométrique marocain pour recevoir avec soin.", detail: "Un plateau décoratif inspiré des motifs zellige, pour servir le thé ou apporter une touche artisanale à la maison.", specs: "Plateau rigide avec décor géométrique. Nettoyage avec un chiffon doux ; ne pas immerger." },
+  { id: "serum", name: "Sérum Éclat", category: "Beauté", group: "beaute", price: 189, color: "#c78d65", colorName: "Ambre", badge: "SOIN VISAGE", image: "photo-1679394270597-e90694d70350", short: "Un soin léger pour une peau lumineuse, chaque jour.", detail: "Un sérum visage à la texture légère, pensé pour s’intégrer simplement à votre rituel du matin ou du soir.", specs: "Flacon en verre ambré de 30 ml, pipette précise. Formule hydratante, sans parfum ajouté." },
+  { id: "argan", name: "Huile d’argan", category: "Beauté beldi", group: "beaute", price: 129, color: "#b67a43", colorName: "Argan", badge: "RITUEL BELDI", image: "photo-1671493229066-f36e86b35841", short: "Un rituel nourrissant inspiré des traditions marocaines.", detail: "Une huile de beauté inspirée des rituels marocains, à intégrer à votre routine visage, corps ou cheveux.", specs: "Flacon en verre ambré de 50 ml avec pipette. Pour un usage cosmétique externe." },
+  { id: "savon-beldi", name: "Savon noir beldi", category: "Beauté beldi", group: "beaute", price: 79, color: "#455442", colorName: "Olive", badge: "RITUEL HAMMAM", image: "photo-1636740599648-ae84f705fc2e", short: "Le geste traditionnel du hammam à la maison.", detail: "Un savon noir à la texture généreuse, inspiré du rituel du hammam marocain. À utiliser sur peau humide avant le rinçage.", specs: "Pot de 200 g. Usage externe uniquement. Éviter le contour des yeux." },
+  { id: "cream", name: "Crème Douce", category: "Beauté", group: "beaute", price: 159, color: "#e8cdb8", colorName: "Pêche", badge: "SOIN QUOTIDIEN", image: "photo-1559881230-1af605ca3f67", short: "Une crème confortable, sans sensation de lourdeur.", detail: "Une crème visage douce et facile à appliquer. Sa texture fondante accompagne votre routine et laisse la peau souple.", specs: "Pot de 50 ml avec couvercle à vis. Convient aux peaux normales à sèches. Sans parfum ajouté." },
+  { id: "rose-water", name: "Eau de rose", category: "Beauté beldi", group: "beaute", price: 89, color: "#ce8e89", colorName: "Rose", badge: "GESTE FRAÎCHEUR", image: "photo-1713768704571-6aeb0d0e5105", short: "Une brume florale, fraîche et délicate.", detail: "Une eau florale inspirée des soins marocains, à vaporiser pour un geste frais dans votre routine quotidienne.", specs: "Flacon vaporisateur de 100 ml. Usage cosmétique externe. Éviter le contact avec les yeux." },
+  { id: "ghassoul", name: "Ghassoul douceur", category: "Beauté beldi", group: "beaute", price: 99, color: "#a97955", colorName: "Terre", badge: "RITUEL HAMMAM", image: "photo-1671493235081-5842463637cd", short: "L’argile marocaine pour un rituel de soin tout simple.", detail: "Une argile de soin inspirée du ghassoul marocain traditionnel. Mélangée à un peu d’eau, elle s’utilise en masque pour le visage ou les cheveux.", specs: "Poudre minérale, pot de 150 g. Préparer juste avant utilisation. Éviter le contour des yeux." },
+  { id: "perfume", name: "Eau de parfum Fleur", category: "Beauté", group: "beaute", price: 349, color: "#d8a4a0", colorName: "Rose poudré", badge: "SIGNATURE", image: "photo-1615108395437-df128ad79e80", short: "Une note florale discrète qui vous ressemble.", detail: "Une eau de parfum au sillage floral et délicat, imaginée pour les petits plaisirs de tous les jours.", specs: "Flacon de 50 ml en verre, vaporisateur rechargeable. Notes de fleur blanche et de musc doux." },
+  { id: "bottle", name: "Gourde Nomade", category: "Maison", group: "maison", price: 229, color: "#7b9b8a", colorName: "Vert sauge", badge: "À EMPORTER", image: "photo-1602143407151-7111542de6e8", short: "Votre boisson préférée, toujours à portée de main.", detail: "Une gourde réutilisable en acier inoxydable, assez légère pour vous suivre toute la journée.", specs: "Acier inoxydable à double paroi, 500 ml, bouchon étanche et lavage à la main conseillé." },
+  { id: "bag", name: "Sac Week-end", category: "Accessoires", group: "accessoires", price: 499, color: "#455c4a", colorName: "Sauge", badge: "PRÊT À PARTIR", image: "photo-1574365569389-a10d488ca3fb", short: "Un sac bien pensé pour les escapades improvisées.", detail: "Un sac souple et spacieux pour partir léger. Une poche intérieure garde les petits essentiels à leur place.", specs: "Toile résistante, anses renforcées, poche intérieure zippée et bandoulière réglable." },
+  { id: "lamp", name: "Lampe Nomade", category: "Maison", group: "maison", price: 299, color: "#efc64b", colorName: "Citron", badge: "BELLE LUMIÈRE", image: "photo-1517991104123-1d56a6e81ed9", short: "Une lumière douce, où que la soirée vous mène.", detail: "Une lampe compacte sans fil qui crée une lumière chaleureuse sur un bureau, une table ou une terrasse couverte.", specs: "Trois intensités, recharge USB-C, jusqu’à 12 h d’autonomie et abat-jour diffusant." }
 ];
 
 const formatPrice = (amount) => `${amount.toLocaleString("fr-FR")} MAD`;
+const productImageUrl = (product) => `https://images.unsplash.com/${product.image}?auto=format&fit=crop&w=900&q=85`;
 const page = document.body.dataset.page;
 const getProduct = (id) => products.find((product) => product.id === id) || products[0];
 const cartKey = "ecom-zakine-cart";
 let toastTimer;
-const pendingCardModels = new Set();
-
-function scanVisibleModels() {
-  pendingCardModels.forEach((container) => {
-    if (!container.isConnected) {
-      pendingCardModels.delete(container);
-      return;
-    }
-    const bounds = container.getBoundingClientRect();
-    if (bounds.bottom < -80 || bounds.top > window.innerHeight + 80) return;
-    pendingCardModels.delete(container);
-    buildModel(container);
-  });
-}
-
-function scheduleModelScan() {
-  scanVisibleModels();
-}
-
-window.addEventListener("scroll", scheduleModelScan, { passive: true });
-window.addEventListener("resize", scheduleModelScan, { passive: true });
 
 function safeCart() {
   try {
@@ -62,12 +42,12 @@ function showToast(message) {
   toastTimer = window.setTimeout(() => toast.classList.remove("visible"), 2400);
 }
 
-function modelMarkup(product, extraClass = "") {
-  return `<div class="card-model ${extraClass}" data-model="${product.model}" data-color="${product.color}" aria-hidden="true"></div>`;
+function productImageMarkup(product) {
+  return `<img class="card-photo" src="${productImageUrl(product)}" alt="" loading="lazy" decoding="async">`;
 }
 
 function productCard(product, index) {
-  return `<article class="product-card" data-id="${product.id}" data-category="${product.group}" style="animation-delay:${index * 70}ms"><a class="card-visual" href="produit.html?item=${product.id}" style="--card-bg:${product.color}1e" aria-label="Découvrir ${product.name}"><span class="card-count">${String(index + 1).padStart(2, "0")} — ${String(products.length).padStart(2, "0")}</span><span class="card-badge">${product.badge}</span>${modelMarkup(product)}</a><div class="card-meta"><a class="card-name" href="produit.html?item=${product.id}">${product.name}</a><span class="card-price">${formatPrice(product.price)}</span></div><p class="card-category">${product.category} · ${product.short}</p><div class="card-actions"><button class="card-quick-add" data-add="${product.id}" aria-label="Ajouter ${product.name} au panier"><span>+</span><span>Ajouter</span></button></div></article>`;
+  return `<article class="product-card" data-id="${product.id}" data-category="${product.group}" style="animation-delay:${index * 70}ms"><a class="card-visual" href="produit.html?item=${product.id}" style="--card-bg:${product.color}1e" aria-label="Découvrir ${product.name}"><span class="card-count">${String(index + 1).padStart(2, "0")} — ${String(products.length).padStart(2, "0")}</span><span class="card-badge">${product.badge}</span>${productImageMarkup(product)}</a><div class="card-meta"><a class="card-name" href="produit.html?item=${product.id}">${product.name}</a><span class="card-price">${formatPrice(product.price)}</span></div><p class="card-category">${product.category} · ${product.short}</p><div class="card-actions"><button class="card-quick-add" data-add="${product.id}" aria-label="Ajouter ${product.name} au panier"><span>+</span><span>Ajouter</span></button></div></article>`;
 }
 
 function renderGrid() {
@@ -88,7 +68,6 @@ function renderGrid() {
       addToCart(button.dataset.add);
     });
   });
-  document.querySelectorAll("[data-model]").forEach(createModel);
 }
 
 function loadProductPage() {
@@ -103,10 +82,12 @@ function loadProductPage() {
   document.querySelector(".product-copy").textContent = product.detail;
   const spec = document.querySelectorAll(".product-description details p")[1];
   if (spec) spec.textContent = product.specs;
-  const model = document.querySelector(".product-model");
-  model.parentElement.querySelector(".stage-number").textContent = String(products.indexOf(product) + 1).padStart(2, "0");
-  model.dataset.model = product.model;
-  model.dataset.color = product.color;
+  const stage = document.querySelector(".product-stage");
+  const image = stage.querySelector(".product-photo");
+  image.src = productImageUrl(product);
+  image.alt = product.name;
+  stage.querySelector(".stage-number").textContent = String(products.indexOf(product) + 1).padStart(2, "0");
+  stage.querySelector(".stage-meta span:last-child").textContent = "PHOTO DU PRODUIT";
   const selectedColorName = document.querySelector(".selected-color-name");
   selectedColorName.textContent = product.colorName;
   const addButton = document.querySelector(".product-add");
@@ -117,12 +98,9 @@ function loadProductPage() {
     swatch.addEventListener("click", () => {
       document.querySelectorAll(".swatch").forEach((item) => item.classList.remove("selected"));
       swatch.classList.add("selected");
-      model.dataset.color = swatch.dataset.color;
       selectedColorName.textContent = swatch.dataset.colorName;
-      model.dispatchEvent(new CustomEvent("model-color-change", { detail: swatch.dataset.color }));
     });
   });
-  createModel(model);
 }
 
 function addToCart(id) {
@@ -149,13 +127,12 @@ function renderCart() {
   drawer.classList.toggle("is-empty", cart.length === 0);
   items.innerHTML = cart.map((line) => {
     const product = getProduct(line.id);
-    return `<article class="cart-line"><div class="cart-thumb" style="--card-bg:${product.color}1e">${modelMarkup(product)}</div><div><a class="cart-line-name" href="produit.html?item=${product.id}">${product.name}</a><div class="cart-line-price">${formatPrice(product.price)}</div><div class="quantity-controls"><button data-quantity="minus" data-id="${product.id}" aria-label="Retirer un ${product.name}">−</button><span>${line.quantity}</span><button data-quantity="plus" data-id="${product.id}" aria-label="Ajouter un ${product.name}">+</button></div></div><button class="remove-item" data-quantity="remove" data-id="${product.id}" aria-label="Supprimer ${product.name}">×</button></article>`;
+    return `<article class="cart-line"><div class="cart-thumb" style="--card-bg:${product.color}1e">${productImageMarkup(product)}</div><div><a class="cart-line-name" href="produit.html?item=${product.id}">${product.name}</a><div class="cart-line-price">${formatPrice(product.price)}</div><div class="quantity-controls"><button data-quantity="minus" data-id="${product.id}" aria-label="Retirer un ${product.name}">−</button><span>${line.quantity}</span><button data-quantity="plus" data-id="${product.id}" aria-label="Ajouter un ${product.name}">+</button></div></div><button class="remove-item" data-quantity="remove" data-id="${product.id}" aria-label="Supprimer ${product.name}">×</button></article>`;
   }).join("");
   const subtotal = cart.reduce((total, line) => total + getProduct(line.id).price * line.quantity, 0);
   const price = document.querySelector(".cart-subtotal");
   if (price) price.textContent = formatPrice(subtotal);
   items.querySelectorAll("[data-quantity]").forEach((button) => button.addEventListener("click", () => updateQuantity(button.dataset.id, button.dataset.quantity)));
-  items.querySelectorAll("[data-model]").forEach(createModel);
 }
 
 function updateQuantity(id, action) {
@@ -551,16 +528,6 @@ function init() {
   setupSearch();
   setupFilters();
   setupForms();
-  if (!window.THREE) {
-    const retry = window.setInterval(() => {
-      if (!window.THREE) return;
-      window.clearInterval(retry);
-      document.querySelectorAll("[data-model]").forEach((container) => {
-        if (container.dataset.initialized !== "true") createModel(container);
-      });
-    }, 100);
-    window.setTimeout(() => window.clearInterval(retry), 10000);
-  }
 }
 
 document.addEventListener("DOMContentLoaded", init);
